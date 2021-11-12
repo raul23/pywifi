@@ -18,8 +18,8 @@
     <br> 🚧 &nbsp;&nbsp;&nbsp;<b>Work-In-Progress</b>
   </p>
 
-Python library and script for managing your WiFi, e.g. check connected users or
-monitor for anomalies.
+Python library and script for managing your WiFi network, e.g. check connected
+users or monitor for anomalies.
 
 .. contents:: **Contents**
    :depth: 3
