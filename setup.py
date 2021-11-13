@@ -1,4 +1,4 @@
-"""setup.py file for the ``cryptoemail`` project.
+"""setup.py file for the ``pywifi`` project.
 """
 import fnmatch
 import os
@@ -6,13 +6,13 @@ import sys
 from setuptools import find_packages, setup
 from setuptools.command.build_py import build_py as build_py_orig
 
-import cryptlib
-from cryptlib import __version__, __test_version__
+import pywifi
+from pywifi import __version__, __test_version__
 
 major, minor = 3, 7
 if sys.version_info < (major, minor):
     raise RuntimeError(f"""
-    {cryptlib.__name__} v{__version__}+ supports Python {major}.{minor}
+    {pywifi.__name__} v{__version__}+ supports Python {major}.{minor}
     and above.
     """)
 
@@ -58,10 +58,10 @@ with open(os.path.join(dirpath, "requirements.txt")) as f:
     REQUIREMENTS = f.read().splitlines()
 """
 
-setup(name='cryptemail',
+setup(name=pywifi.__project_name__,
       version=VERSION,
-      description='Command-line program for sending and receiving encrypted '
-                  'emails.',
+      description='Python library and script for managing your WiFi network, '
+                  'e.g. check connected users or monitor for anomalies.',
       long_description=README,
       long_description_content_type='text/x-rst',
       classifiers=[
@@ -75,8 +75,8 @@ setup(name='cryptemail',
         'Programming Language :: Python :: 3',
         'Topic :: Utilities'
       ],
-      keywords='encryption cryptography email pgp gnupg',
-      url='https://github.com/raul23/cryptemail',
+      keywords='wifi network',
+      url='https://github.com/raul23/pywifi',
       author='R',
       license='GPLv3',
       python_requires=f'>={major}.{minor}',
@@ -84,10 +84,10 @@ setup(name='cryptemail',
       cmdclass={'build_py': build_py},
       include_package_data=True,
       entry_points={
-        'console_scripts': ['cryptemail=cryptlib.scripts.cryptemail:main']
+        'console_scripts': ['wifi=pywifi.scripts.wifi:main']
       },
       project_urls={  # Optional
-          'Bug Reports': 'https://github.com/raul23/cryptemail/issues',
-          'Source': 'https://github.com/raul23/cryptemail',
+          'Bug Reports': 'https://github.com/raul23/pywifi/issues',
+          'Source': 'https://github.com/raul23/pywifi',
       },
       zip_safe=False)
